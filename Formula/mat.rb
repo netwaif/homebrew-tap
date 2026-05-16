@@ -1,8 +1,9 @@
 class Mat < Formula
   desc "Read-only TUI monitor for the multi-agent-starter system"
   homepage "https://github.com/netwaif/mat"
-  url "https://github.com/netwaif/mat/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "853f27b7ec435b9150a5201a87509e66da71c4523909c02615182cdecd5814e8"
+  url "https://github.com/netwaif/mat/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "1c1f08533a87bc3a7345f4cb236256c0aad0b7a50168423c3ff67e335aca864b"
+  license "MIT"
   head "https://github.com/netwaif/mat.git", branch: "main"
 
   depends_on "go" => :build
