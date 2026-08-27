@@ -5,21 +5,21 @@
 class Agentlayer < Formula
   desc "iTerm2+tmux 멀티 에이전트 관제탑 — 상태·알림·worktree"
   homepage "https://github.com/netwaif/agentlayer"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/netwaif/agentlayer/releases/download/v1.0.0/agentlayer_1.0.0_darwin_amd64.tar.gz"
-    sha256 "5361a4d240e2d18bd4c433397305bdf8a55503a818bac09dea7418f8207d2f98"
+    url "https://github.com/netwaif/agentlayer/releases/download/v1.1.0/agentlayer_1.1.0_darwin_amd64.tar.gz"
+    sha256 "9df45adc339a57d31c10f55db7aad2829c4adca9de3c06f2f0f0a805abf397a2"
 
     define_method(:install) do
       bin.install "agentlayer"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/netwaif/agentlayer/releases/download/v1.0.0/agentlayer_1.0.0_darwin_arm64.tar.gz"
-    sha256 "09e0674149890c50c428a26c73993b46c96f6e5cd5cdc870723a9195d6b90f77"
+    url "https://github.com/netwaif/agentlayer/releases/download/v1.1.0/agentlayer_1.1.0_darwin_arm64.tar.gz"
+    sha256 "1c2d64fb6889aa2e54640b5f46bd1bc08dc8ea1283130428afddc909bd3fc3ed"
 
     define_method(:install) do
       bin.install "agentlayer"
@@ -27,6 +27,7 @@ class Agentlayer < Formula
   end
 
   test do
+    system "#{bin}/agentlayer", "version"
     system "#{bin}/agentlayer", "status", "--json"
   end
 end
